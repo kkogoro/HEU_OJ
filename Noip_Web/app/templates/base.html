@@ -25,22 +25,22 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                        <a href="{{ url_for('index.index_page') }}">首页</a>
+                        <a href="{{ url_for('index.index_page') }}">Index</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('problem.problem_list') }}">题目列表</a>
+                        <a href="{{ url_for('problem.problem_list') }}">Problems</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('status.status_list') }}">提交列表</a>
+                        <a href="{{ url_for('status.status_list') }}">Submits</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('contest.contest_list') }}">比赛列表</a>
+                        <a href="{{ url_for('contest.contest_list') }}">Contests</a>
                     </li>
                     <li>
                         <a href="{{ url_for('blog.blog_list') }}">Blog</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('challenge.challenge_list') }}">挑战</a>
+                        <a href="{{ url_for('challenge.challenge_list') }}">Challenge</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -50,42 +50,42 @@
                         <ul class="dropdown-menu">
                             {% if current_user.is_admin() %}
                             <li>
-                                <a href="{{ url_for('admin.admin_index') }}">后台管理</a>
+                                <a href="{{ url_for('admin.admin_index') }}">Control Panel</a>
                             </li>
                             {% elif current_user.can(Permission.MODIFY_SELF_PROBLEM) %}
                             <li>
-                                <a href="{{ url_for('teacher.admin_index') }}">教师后台管理</a>
+                                <a href="{{ url_for('teacher.admin_index') }}">Teacher's Panel</a>
                             </li>
                             {% endif %}
                             <li>
-                                <a href="{{ url_for('auth.edit_profile') }}">修改个人信息</a>
+                                <a href="{{ url_for('auth.edit_profile') }}">Modify Profile</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('auth.change_email_request') }}">修改邮箱</a>
+                                <a href="{{ url_for('auth.change_email_request') }}">Change Email</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('auth.change_password') }}">修改密码</a>
+                                <a href="{{ url_for('auth.change_password') }}">Change Password</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('auth.followed') }}">我关注的人</a>
+                                <a href="{{ url_for('auth.followed') }}">Following</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('auth.followed_by') }}">关注我的人</a>
+                                <a href="{{ url_for('auth.followed_by') }}">Followed</a>
                             </li>
                             <li>
-                                <a href="{{ url_for('auth.logout') }}">退出系统</a>
+                                <a href="{{ url_for('auth.logout') }}">Logout</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{{ url_for('auth.user_detail', username=current_user.username) }}">个人资料</a>
+                        <a href="{{ url_for('auth.user_detail', username=current_user.username) }}">Profile</a>
                     </li>
                     {% else %}
                     <li>
-                        <a href="{{ url_for('auth.register') }}">注册</a>
+                        <a href="{{ url_for('auth.register') }}">Register</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('auth.login') }}">登录</a>
+                        <a href="{{ url_for('auth.login') }}">Login</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -117,7 +117,7 @@
 <footer>
     <div class="row">
         <div class="col-lg-12">
-            <p>Copyright &copy; 2016 HEU. Licensed under AGPL-3.0 license.</p>
+            <p>Copyright &copy; 2018 HEU_ACMTEAM. Licensed under AGPL-3.0 license.</p>
         </div>
     </div>
 </footer>

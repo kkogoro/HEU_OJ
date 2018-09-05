@@ -25,14 +25,14 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>时间限制</th>
-                                <th>内存限制</th>
-                                <th>总提交数</th>
-                                <th>AC数</th>
+                                <th>Time Limit</th>
+                                <th>Memory Limit</th>
+                                <th>Submit</th>
+                                <th>Accepted</th>
                                 <th>Special Judge</th>
-                                <th>题目类型</th>
-                                <th>学校名称</th>
-                                <th>最近更新时间</th>
+                                <th>Type</th>
+                                <th>Scholl</th>
+                                <th>Last Update</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,9 +42,9 @@
                                 <td>{{ problem.submission_num }}</td>
                                 <td>{{ problem.accept_num }}</td>
                                 {% if problem.special_judge is sameas true %}
-                                <td>是</td>
+                                <td>Yes</td>
                                 {% else %}
-                                <td>否</td>
+                                <td>No</td>
                                 {% endif %}
                                 {% if problem.type is sameas true %}
                                 <td>NOIP</td>

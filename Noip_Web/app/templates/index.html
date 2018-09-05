@@ -55,10 +55,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-check"></i> 题目</h4>
+                        <h4><i class="fa fa-fw fa-check"></i> Problems</h4>
                     </div>
                     <div class="panel-body">
-                        <p>本地题库</p>
+                        <p>Local Problems</p>
                         <a href="{{ url_for('problem.problem_list') }}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
@@ -66,10 +66,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-gift"></i> 比赛</h4>
+                        <h4><i class="fa fa-fw fa-gift"></i> Contests</h4>
                     </div>
                     <div class="panel-body">
-                        <p>公开比赛 私有比赛 现场赛</p>
+                        <p>Public Private Onsite</p>
                         <a href="{{ url_for('contest.contest_list') }}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
@@ -77,10 +77,10 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4><i class="fa fa-fw fa-compass"></i> 提交状态</h4>
+                        <h4><i class="fa fa-fw fa-compass"></i> Submits</h4>
                     </div>
                     <div class="panel-body">
-                        <p>状态列表</p>
+                        <p>Status</p>
                         <a href="{{ url_for('status.status_list') }}" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                 <div class="panel-heading" role="tab" id="headingOne">
                   <h4 class="panel-title">
                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      <h4><font color="#FF0000">网站公告--&gt; {{ blog.title }}</font></h4>
+                      <h4><font color="#FF0000">Advertise--&gt; {{ blog.title }}</font></h4>
                     </a>
                   </h4>
                 </div>
