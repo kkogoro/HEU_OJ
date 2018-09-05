@@ -1,0 +1,5 @@
+mcs
+-debug-
+-optimize+
+-define:ONLINE_JUDGE
+$src

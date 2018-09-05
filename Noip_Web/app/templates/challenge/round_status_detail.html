@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}挑战-{{ challenge.challenge_name }}{% endblock %}s
+{% block page_content %}
+    <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">关卡 - {{ round.round_name }}
+                    <small>挑战 - {{ challenge.challenge_name }} </small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url_for('index.index_page') }}">Home</a>
+                    </li>
+                    <li class="active">Challenge</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+            	<div class="col-lg-2">
+                    <div class="list-group">
+                        <a href="{{ url_for('challenge.round_detail', round_id=round.id) }}" class="list-group-item">题目列表</a>
+                        <a href="{{ url_for('challenge.round_status_list', round_id=round.id) }}" class="list-group-item">提交列表</a>
+                    </div>
+            	</div>
+                <h2>提交代码</h2>
+                <div class="col-lg-10">
+                    <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
+                        <thead>
+                            <tr>
+                                <th>运行ID</th>
+                                <th>题目ID</th>
+                                <th>提交时间</th>
+                                <th>评测状态</th>
+                                <th>运行时间</th>
+                                <th>运行内存</th>
+                                <th>语言</th>
+                                <th>提交用户</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>{{ status.id }}</th>
+                                <th><a href="{{ url_for('challenge.round_problem_detail', round_id=round.id, problem_index=status.challenge_round.problems.filter_by(problem_id=status.problem_id).first().problem_index) }}">{{ status.challenge_round.problems.filter_by(problem_id=status.problem_id).first().problem_index }}</a></th>
+                                <th>{{ moment(status.submit_time).format('LLL') }}</th>
+                                {% if status.problem.type is not sameas true %}
+                                <td class="status">{{ status_list[status.status|int] }}</td>
+                                {% else %}
+                                    {% if status.status < 0 %}
+                                        <td class="status">{{ status_list[status.status|int] }}</td>
+                                    {% else %}
+                                        <td class="status">{{ status.status }}</td>
+                                    {% endif %}
+                                {% endif %}
+                                <th>{% if status.status != 0 and status.status != 10%}{{ status.exec_time }}ms{% else %}-{% endif %}</th>
+                                <th>{% if status.status != 0 and status.status != 10%}{{ status.exec_memory }}k{% else %}-{% endif %}</th>
+                                <th>{{ language[status.language] }}</th>
+                                <td><a href="{{ url_for('auth.user_detail', username=status.author_username) }}">{{ status.author_username }}</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                {% if status.problem.type is sameas true %}
+                    <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
+                        <thead>
+                            <tr>
+                                <th>测试点</th>
+                                <th>评测状态</th>
+                                <th>运行时间</th>
+                                <th>运行内存</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in status_sub %}
+                            <tr>
+                                <th>{{ loop.index }}</th>
+                                <th>{{ status_list[item[0]|int] }}</th>
+                                <th>{{ item[1] }}ms</th>
+                                <th>{{ item[2] }}k</th>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                {% if ce_info %}
+                    <hr>
+                        <div class="well">
+                        <h3>编译信息:</h3>
+                        {{ ce_info.info|replace("\n", "<br>")|safe }}
+                        </div>
+                    {% endif %}
+                    <hr>
+                    <h2>Code</h2>
+      <pre>
+          <code>
+{{ code }}
+          </code>
+      </pre>
+                </div>
+            </div>
+        </div>
+{% endblock %}

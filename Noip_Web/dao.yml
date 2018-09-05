@@ -1,0 +1,49 @@
+version: '2'
+services:
+  nginx-proxy:
+    image: daocloud.io/daocloud/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+        - 80:80
+        - 443:443
+    volumes:
+        - /var/run/docker.sock:/tmp/docker.sock:ro
+        - /root/certs:/etc/nginx/certs
+        - /home/nginx:/app
+    restart: always
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: rabbitmq
+    ports:
+        - 5672:5672
+  judge_web:
+    image: daocloud.io/8cbx/online_judge_web:v0.1.9_onsite
+    command: ''
+    privileged: false
+    restart: always
+    ports:
+        - '8000'
+    links:
+        - rabbitmq
+    environment:
+        - VIRTUAL_HOST=192.168.2.145
+        - MAIL_SERVER=smtp.mxhichina.com
+        - MAIL_PORT=25
+        - MAIL_USE_TLS=0
+        - MAIL_USERNAME=no_reply@myvjudge.cn
+        - FLASKY_MAIL_SUBJECT_PREFIX=[HEU Onlie Judge]
+        - FLASKY_MAIL_SENDER=no_reply<no_reply@myvjudge.cn>
+        - SECRET_KEY=7f30d5871015d072d2b323abd5fbe021
+        - MAIL_PASS=1234567890.Aa
+        - FLASKY_ADMIN=chu849238686@aliyun.com
+        - MYSQL_ADDR=172.17.0.1
+        - MYSQL_PORT=3306
+        - MYSQL_USER=root
+        - MYSQL_PASS=matrix67
+        - FLASK_CONFIG=production
+        - RABBITMQ_PORT_5672_TCP_ADDR=172.17.0.1
+        - RABBITMQ_PORT_5672_TCP_PORT=5672
+    volumes:
+        - /home/judge/log:/opt/judge_web/log
+        - /home/judge/app/static/photo:/opt/judge_web/app/static/photo
+        - /home/judge/data:/opt/judge_web/data

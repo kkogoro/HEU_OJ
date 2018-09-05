@@ -1,0 +1,41 @@
+ljudge (0.6.1) unstable; urgency=low
+
+  * Update default config.
+  * Install default config to /etc.
+
+ -- Jun Wu <quark@lihdd.net>  Tue, 12 May 2015 16:02:00 +0800
+
+ljudge (0.6.0) unstable; urgency=low
+
+  * Replace filterefs with lrun-mirrorfs.
+  * Update configs to use lrun fopen-filter.
+  * Fix a segfault issue.
+
+ -- Jun Wu <quark@lihdd.net>  Sun, 11 Jan 2015 10:42:00 +0800
+
+ljudge (0.5.0) unstable; urgency=low
+
+  * Support check output using SHA1.
+  * More accurate memory accounting.
+  * Ship with vbnc, gcj configs.
+
+ -- Jun Wu <quark@lihdd.net>  Tue, 25 Nov 2014 14:35:00 +0800
+
+ljudge (0.4.1) unstable; urgency=low
+
+  * Fix cgroup checking.
+
+ -- Jun Wu <quark@lihdd.net>  Sun, 12 Nov 2014 20:05:00 +0800
+
+ljudge (0.4.0) unstable; urgency=low
+
+  * Fix some threading issues.
+  * Remove some debugging code.
+
+ -- Jun Wu <quark@lihdd.net>  Sun, 10 Nov 2014 21:40:00 +0800
+
+ljudge (0.3.0) unstable; urgency=low
+
+  * Initial debian package release.
+
+ -- Jun Wu <quark@lihdd.net>  Sun, 09 Nov 2014 15:40:00 +0800
