@@ -57,7 +57,7 @@
 
               </div>
               <div class="profile_info">
-                <span>欢迎,</span>
+                <span>Welcome,</span>
                 <h2>{{ current_user.nickname }}</h2>
               </div>
             </div>
@@ -69,55 +69,55 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a href="{{ url_for('admin.admin_index') }}"><i class="fa fa-home"></i> 后台首页 </a>
+                  <li><a href="{{ url_for('admin.admin_index') }}"><i class="fa fa-home"></i> Overall View </a>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> 题目管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Problems <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.problem_list') }}">题目列表</a></li>
-                      <li><a href="{{ url_for('admin.problem_insert') }}">添加题目</a></li>
-                      <li><a href="{{ url_for('admin.tag_list') }}">题目标签列表</a></li>
-                      <li><a href="{{ url_for('admin.tag_insert') }}">添加题目标签</a></li>
+                      <li><a href="{{ url_for('admin.problem_list') }}">Problem list</a></li>
+                      <li><a href="{{ url_for('admin.problem_insert') }}">Add new problems</a></li>
+                      <li><a href="{{ url_for('admin.tag_list') }}">Problem tag list</a></li>
+                      <li><a href="{{ url_for('admin.tag_insert') }}">Add new tag</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-desktop"></i> Users <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.user_list') }}">用户列表</a></li>
+                      <li><a href="{{ url_for('admin.user_list') }}">User list</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> 学校管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> Schools <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.school_list') }}">学校列表</a></li>
-                      <li><a href="{{ url_for('admin.school_status_insert') }}">添加学校</a></li>
+                      <li><a href="{{ url_for('admin.school_list') }}">School list</a></li>
+                      <li><a href="{{ url_for('admin.school_status_insert') }}">Add new school</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> 比赛管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Contests <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.contest_list') }}">比赛列表</a></li>
-                      <li><a href="{{ url_for('admin.contest_insert') }}">添加比赛</a></li>
+                      <li><a href="{{ url_for('admin.contest_list') }}">Contest list</a></li>
+                      <li><a href="{{ url_for('admin.contest_insert') }}">Add new contest</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i> 提交状态管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i> Submissions <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.submission_status_list') }}">提交状态列表</a></li>
+                      <li><a href="{{ url_for('admin.submission_status_list') }}">Submission list</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i> Blog管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i> Blogs <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.blog_list') }}">Blog列表</a></li>
-                      <li><a href="{{ url_for('admin.blog_insert') }}">添加Blog</a></li>
+                      <li><a href="{{ url_for('admin.blog_list') }}">Blog list</a></li>
+                      <li><a href="{{ url_for('admin.blog_insert') }}">Add new Blog</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i> 挑战管理 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i> Challenges <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.challenge_list') }}">挑战列表</a></li>
-                      <li><a href="{{ url_for('admin.insert_challenge') }}">添加挑战</a></li>
-                      <li><a href="{{ url_for('admin.insert_challenge_round') }}">添加关卡</a></li>
+                      <li><a href="{{ url_for('admin.challenge_list') }}">Challenge list</a></li>
+                      <li><a href="{{ url_for('admin.insert_challenge') }}">Add new challenge</a></li>
+                      <li><a href="{{ url_for('admin.insert_challenge_round') }}">Add new round</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i> 通用工具 <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i> Tools <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ url_for('admin.log_list') }}">日志查询</a></li>
-                      <li><a href="{{ url_for('admin.modify_announce') }}">通知页面编辑</a></li>
+                      <li><a href="{{ url_for('admin.log_list') }}">View system Log</a></li>
+                      <li><a href="{{ url_for('admin.modify_announce') }}">Modify announcement</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -145,14 +145,14 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="{{ url_for('auth.user_detail', username=current_user.username) }}"> 个人信息</a></li>
-                    <li><a href="javascript:;">帮助页面</a></li>
-                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out pull-right"></i> 退出</a></li>
+                    <li><a href="{{ url_for('auth.user_detail', username=current_user.username) }}"> Profile</a></li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="{{ url_for('auth.logout') }}"><i class="fa fa-sign-out pull-right"></i> Logout</a></li>
                   </ul>
                 </li>
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-expanded="false">
-                    <i class="glyphicon glyphicon-user"></i> 当前角色: {{ current_user.role.name }}
+                    <i class="glyphicon glyphicon-user"></i> Character: {{ current_user.role.name }}
                   </a>
                 </li>
               </ul>
@@ -177,7 +177,7 @@
     {% block footer -%}
         <footer>
           <div class="pull-right">
-            <p>Copyright &copy; 2016 HEU-8cbx. Licensed under GPL-3.0 license. | 黑ICP备16005103号-1</p>
+            <p>Copyright &copy; 2018 HEU_ACMTEAM. Licensed under GPL-3.0 license. | 黑ICP备16005103号-1</p>
           </div>
           <div class="clearfix"></div>
         </footer>

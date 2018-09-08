@@ -4,8 +4,8 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">编辑首页通知
-                    <small>Modify Announcement</small>
+                <h1 class="page-header">Modify Announcement
+                    <small>Index page</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="{{ url_for('index.index_page') }}">Home</a>
@@ -23,7 +23,7 @@
             <div class="form-group has-feedback{% if form.blog_id.errors %} has-error{% endif %}">
                 {{ form.blog_id.label(for="inputTagname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.blog_id(type="text", class="form-control", placeholder="Blog ID, 0表示无首页通知") }}
+                    {{ form.blog_id(type="text", class="form-control", placeholder="Blog ID, 0 represents no announcement") }}
         		    {% if form.blog_id.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>

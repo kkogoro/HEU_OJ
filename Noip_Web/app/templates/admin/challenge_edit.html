@@ -4,7 +4,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">编辑挑战信息
+                <h1 class="page-header">EDIT
                     <small>Edit Challenge</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -23,7 +23,7 @@
             <div class="form-group has-feedback{% if form.challenge_name.errors %} has-error{% endif %}">
                 {{ form.challenge_name.label(for="inputTagname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.challenge_name(type="text", class="form-control", placeholder="挑战名称") }}
+                    {{ form.challenge_name(type="text", class="form-control", placeholder="Challenge Name") }}
         		    {% if form.challenge_name.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -39,7 +39,7 @@
             <div class="form-group has-feedback{% if form.challenge_level.errors %} has-error{% endif %}">
                 {{ form.challenge_level.label(for="inputTagname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.challenge_level(type="text", class="form-control", placeholder="挑战级别") }}
+                    {{ form.challenge_level(type="text", class="form-control", placeholder="Level") }}
         		    {% if form.challenge_level.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>

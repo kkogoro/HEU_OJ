@@ -8,7 +8,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">编辑挑战关卡题目
+                <h1 class="page-header">EDIT
                     <small>Edit Challenge Round Problem</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -29,11 +29,11 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>关卡题目ID</th>
-                                <th>本地题目ID</th>
-                                <th>题目原标题</th>
-                                <th>关卡题目标题</th>
-                                <th>操作</th>
+                                <th>Problem ID</th>
+                                <th>Local Problem ID</th>
+                                <th>Local Problem Title</th>
+                                <th>Problem Title</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,7 +58,7 @@
     		<div class="form-group has-feedback{% if form.problem_id.errors %} has-error{% endif %}">
                 {{ form.problem_id.label(for="inputProblemID", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.problem_id(type="text", class="form-control", placeholder="题目ID") }}
+                    {{ form.problem_id(type="text", class="form-control", placeholder="Problem ID") }}
         		    {% if form.problem_id.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -74,7 +74,7 @@
             <div class="form-group has-feedback{% if form.problem_alias.errors %} has-error{% endif %}">
                 {{ form.problem_alias.label(for="inputProblemAlias", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.problem_alias(type="text", class="form-control", placeholder="比赛题目标题") }}
+                    {{ form.problem_alias(type="text", class="form-control", placeholder="Problem Title") }}
         		    {% if form.problem_alias.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
