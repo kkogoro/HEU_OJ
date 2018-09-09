@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
-{% block title %}题目列表{% endblock %}
+{% block title %}Problem List{% endblock %}
 {% block page_content %}
     <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">题目列表
+                <h1 class="page-header">VIEW
                     <small>Problem List</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -29,15 +29,15 @@
 					    <thead>
 					        <tr>
 					            <th>ID</th>
-					            <th>所属学校</th>
-                                <th>题目类型</th>
-					            <th>标题</th>
-					            <th>提交数</th>
-					            <th>AC数</th>
-					            <th>最近更新时间</th>
-                                <th>题目标签</th>
+					            <th>School</th>
+                                <th>Type</th>
+					            <th>Title</th>
+					            <th>Submissions</th>
+					            <th>Accepted</th>
+					            <th>Last Update</th>
+                                <th>Tag</th>
                                 {% if current_user.can(Permission.MODIFY_SELF_PROBLEM) %}
-                                <th>可见性</th>
+                                <th>Visibility</th>
                                 {% endif %}
 					        </tr>
 					    </thead>

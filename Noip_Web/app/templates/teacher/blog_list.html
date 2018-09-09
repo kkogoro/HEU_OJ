@@ -5,7 +5,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Blog列表
+                <h1 class="page-header">VIEW
                     <small>Blog List</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -30,11 +30,11 @@
 					    <thead>
                             <tr>
                               <th>Blog ID</th>
-                              <th>标题</th>
-                              <th>作者</th>
-                              <th>时间</th>
-                              <th>可见性</th>
-                              <th>操作</th>
+                              <th>Title</th>
+                              <th>Author</th>
+                              <th>Time</th>
+                              <th>Visibility</th>
+                              <th>Options</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -45,7 +45,7 @@
                               <td><a href="{{ url_for('teacher.user_detail', username=blog.author_username) }}">{{ blog.author_username }}</a></td>
                               <td>{{ moment(blog.last_update).format('LLL') }}</td>
                               <td>{{ blog.public }}</td>
-                              <td><a href="{{ url_for('teacher.blog_edit', blog_id=blog.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button></a></td>
+                              <td><a href="{{ url_for('teacher.blog_edit', blog_id=blog.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Edit</button></a></td>
                           </tr>
                           {% endfor %}
                          </tbody>

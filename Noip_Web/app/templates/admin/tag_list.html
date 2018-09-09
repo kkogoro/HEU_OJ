@@ -5,7 +5,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">标签列表
+                <h1 class="page-header">VIEW
                     <small>Tag List</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -31,7 +31,7 @@
                             <tr>
                               <th>Tag_ID</th>
                               <th>Tag_Name</th>
-                              <th>操作</th>
+                              <th>Options</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -39,7 +39,7 @@
                             <tr>
                               <td>{{ tags.id }}</td>
                               <td>{{ tags.tag_name }}</td>
-                              <td><a href="{{ url_for('admin.tag_edit', tag_id=tags.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button></a></td>
+                              <td><a href="{{ url_for('admin.tag_edit', tag_id=tags.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Edit</button></a></td>
                           </tr>
                           {% endfor %}
                          </tbody>

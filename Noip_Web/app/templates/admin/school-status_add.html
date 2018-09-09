@@ -4,7 +4,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">添加学校
+                <h1 class="page-header">ADD
                     <small>Add School</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -22,7 +22,7 @@
     		<div class="form-group has-feedback{% if form.school_name.errors %} has-error{% endif %}">
                 {{ form.school_name.label(for="inputSchoolName", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.school_name(type="text", class="form-control", placeholder="学校名称") }}
+                    {{ form.school_name(type="text", class="form-control", placeholder="School Name") }}
         		    {% if form.school_name.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -38,7 +38,7 @@
             <div class="form-group has-feedback{% if form.description.errors %} has-error{% endif %}">
                 {{ form.description.label(for="inputDescription", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.description(type="text", class="form-control", placeholder="学校描述") }}
+                    {{ form.description(type="text", class="form-control", placeholder="Description") }}
         		    {% if form.description.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>

@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
-{% block title %}挑战-{{ challenge.challenge_name }}{% endblock %}
+{% block title %}Challenge-{{ challenge.challenge_name }}{% endblock %}
 {% block page_content %}
     <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">关卡 - {{ round.round_name }}
-                    <small>挑战 - {{ challenge.challenge_name }} </small>
+                <h1 class="page-header">Round - {{ round.round_name }}
+                    <small>Challenge - {{ challenge.challenge_name }} </small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="{{ url_for('index.index_page') }}">Home</a>
@@ -21,8 +21,8 @@
             <div class="col-lg-12">
             	<div class="col-lg-2">
                     <div class="list-group">
-                         <a href="{{ url_for('challenge.round_detail', round_id=round.id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('challenge.round_status_list', round_id=round.id) }}" class="list-group-item">提交列表</a>
+                         <a href="{{ url_for('challenge.round_detail', round_id=round.id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('challenge.round_status_list', round_id=round.id) }}" class="list-group-item">Submission List</a>
                     </div>
             	</div>
                 <h2>{{ round.problems.filter_by(problem_index=problem_index).first().problem_alias }}</h2>
@@ -30,10 +30,10 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>时间限制</th>
-                                <th>内存限制</th>
+                                <th>Time Limit</th>
+                                <th>Memory Limit</th>
                                 <th>Special Judge</th>
-                                <th>题目类型</th>
+                                <th>Type</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,9 +41,9 @@
                                 <th>{{ problem.time_limit }}s</th>
                                 <th>{{ problem.memory_limit }}m</th>
                                 {% if problem.special_judge is sameas true %}
-                                <th>是</th>
+                                <th>True</th>
                                 {% else %}
-                                <th>否</th>
+                                <th>False</th>
                                 {% endif %}
                                 {% if problem.type is sameas true %}
                                 <td>NOIP</td>
@@ -53,7 +53,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a class="btn btn-default btn-block btn btn-primary" href="{{ url_for('challenge.round_submit',round_id=round.id, problem_index=problem_index) }}" role="button">提交</a>
+                    <a class="btn btn-default btn-block btn btn-primary" href="{{ url_for('challenge.round_submit',round_id=round.id, problem_index=problem_index) }}" role="button">Submit</a>
                     <h2>Description</h2>
                         <p style="white-space: pre-wrap;">{{ problem.description|safe }}</p>
                     <hr/>

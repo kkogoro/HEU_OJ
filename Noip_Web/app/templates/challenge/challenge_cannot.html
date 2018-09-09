@@ -4,7 +4,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">挑战
+                <h1 class="page-header">Error
                     <small>Challenge</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -20,9 +20,9 @@
 
             <div class="col-lg-12">
                 <div class="jumbotron">
-                    <h1><span class="error-404">级别过低</span></h1>
-                    <p>你的级别还不够，快去打怪刷级吧！</p>
-                    <p>你的级别:{{ current_user.current_level }}，挑战级别{{ challenge.challenge_level }}</p>
+                    <h1><span class="error-404">Your level is too low.</span></h1>
+                    <p>Why not try some other problems?</p>
+                    <p>Your Level:{{ current_user.current_level }}，Challenge required{{ challenge.challenge_level }}</p>
                 </div>
             </div>
 

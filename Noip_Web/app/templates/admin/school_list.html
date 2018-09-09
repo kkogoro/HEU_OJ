@@ -5,7 +5,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">学校列表
+                <h1 class="page-header">VIEW
                     <small>School List</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -30,8 +30,8 @@
 					    <thead>
                             <tr>
                               <th>School ID</th>
-                              <th>学校名称</th>
-                              <th>操作</th>
+                              <th>Name</th>
+                              <th>Option</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -39,7 +39,7 @@
                             <tr>
                               <td>{{ SCHOOL.id }}</td>
                               <td>{{ SCHOOL.school_name }}</td>
-                              <td><a href="{{ url_for('admin.school_status_edit', school_id=SCHOOL.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button></a><a href="{{ url_for('admin.school_status_delete', school_id=SCHOOL.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> 删除</button></a></td>
+                              <td><a href="{{ url_for('admin.school_status_edit', school_id=SCHOOL.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Edit</button></a><a href="{{ url_for('admin.school_status_delete', school_id=SCHOOL.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> Delete</button></a></td>
                           </tr>
                           {% endfor %}
                          </tbody>

@@ -45,15 +45,15 @@
                 </div>
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">比赛首页</a>
-                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">提交列表</a>
-                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">排行榜</a>
+                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">Overview</a>
+                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">Submission List</a>
+                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">Ranklist</a>
                         {% if contest.manager_username == current_user.username or current_user.is_admin()  %}
                         <a href="{{ url_for('contest.contest_user_check', contest_id=contest_id) }}" class="list-group-item">Confirm</a>
-                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">排行榜(管理员)</a>
+                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">Ranklist(Admin)</a>
                         {% if not contest.type %}
-                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">发送气球</a>
+                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">Send Balloon</a>
                         {% endif %}
                         {% endif %}
                     </div>
@@ -63,10 +63,10 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;" id="ranklist">
                         <thead>
                          <tr>
-                            <th>排名</th>
-                            <th>用户名</th>
-                            <th>总AC数</th>
-                            <th>总用时</th>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>Accepted</th>
+                            <th>Time Used</th>
                             {% for problem in problems %}
                             <th><a href="{{ url_for('contest.contest_problem_detail',contest_id=contest_id, problem_index=problem.problem_index) }}">{{ problem.problem_index }}</a></th>
                             {% endfor %}
@@ -76,7 +76,7 @@
                         {{ ranklists|safe }}
                      </tbody>
                     </table>
-                    <h6>*RankList每10s更新一次</h6>
+                    <h6>*RankList refreshes every 10s</h6>
                 </div>
                 {% else %}
                 {% if statement == 1 %}
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-lg-7">
                     </br></br>
-                    <h1>比赛仍在进行中！</h1>
+                    <h1>Contest is running!</h1>
                 </div>
                 {% endif %}
 
@@ -93,7 +93,7 @@
                 </div>
                 <div class="col-lg-7">
                     </br></br>
-                    <h1>比赛已结束，正在判题中。</h1>
+                    <h1>Contest is finished, now judging.</h1>
                 </div>
                 {% endif %}
 
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-lg-7">
                     </br></br>
-                    <h1>比赛已结束,结果仅比赛管理员可见。</h1>
+                    <h1>Contest is finished, only admin can view the ranklist.</h1>
                 </div>
                 {% endif %}
                 {% if statement == 3 and not rank_frozen %}
@@ -111,9 +111,9 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;" id="ranklist">
                         <thead>
                          <tr>
-                            <th>排名</th>
-                            <th>用户名</th>
-                            <th>总分数</th>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>Score</th>
                             {% for problem in problems %}
                             <th><a href="{{ url_for('contest.contest_problem_detail',contest_id=contest_id, problem_index=problem.problem_index) }}">{{ problem.problem_index }}</a></th>
                             {% endfor %}

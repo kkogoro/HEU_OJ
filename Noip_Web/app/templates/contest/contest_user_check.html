@@ -25,36 +25,36 @@
                 </div>
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">比赛首页</a>
-                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">提交列表</a>
-                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">排行榜</a>
+                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">Overview</a>
+                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">Submission List</a>
+                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">Ranklist</a>
                         {% if contest.manager_username == current_user.username or current_user.is_admin()  %}
                         <a href="{{ url_for('contest.contest_user_check', contest_id=contest_id) }}" class="list-group-item">Confirm</a>
-                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">排行榜(管理员)</a>
+                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">Ranklist(Admin)</a>
                         {% if not contest.type %}
-                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">发送气球</a>
+                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">Send Balloon</a>
                         {% endif %}
                         {% endif %}
                     </div>
             	</div>
                 <div class="col-lg-10">
-                    <h3>用户参赛确认</h3>
+                    <h3>Regist Confirm</h3>
                     {% if pagination %}
                         {{ macros.pagination_widget(pagination, 'contest.contest_list') }}
                     {% endif %}
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                              <th>用户名</th>
-                              <th>真实姓名</th>
-                              <th>学校</th>
-                              <th>学号</th>
-                              <th>手机号</th>
-                              <th>注册比赛时间</th>
-                              <th>确认状态</th>
-                              <th>确认</th>
-                              <th>取消确认</th>
+                              <th>Username</th>
+                              <th>Realname</th>
+                              <th>School</th>
+                              <th>Number</th>
+                              <th>Phone</th>
+                              <th>Request Time</th>
+                              <th>Status</th>
+                              <th>confirm</th>
+                              <th>unconfirm</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -66,9 +66,9 @@
                               <td>{{ user.student_num }}</td>
                               <td>{{ user.phone_num }}</td>
                               <td>{{ moment(user.register_time).format('LLL') }}</td>
-                              <td>{% if user.user_confirmed is sameas true%}已确认{% else %}未确认{% endif %}</td>
-                              <td><a href="{{ url_for('contest.contest_user_checked', contest_id=contest_id, user_id=user.user_id, flag=1) }}">点击确认</a></td>
-                              <td><a href="{{ url_for('contest.contest_user_checked', contest_id=contest_id, user_id=user.user_id, flag=0) }}">点击取消确认</a></td>
+                              <td>{% if user.user_confirmed is sameas true%}Confirmed{% else %}Unconfirmed{% endif %}</td>
+                              <td><a href="{{ url_for('contest.contest_user_checked', contest_id=contest_id, user_id=user.user_id, flag=1) }}">click to confirm</a></td>
+                              <td><a href="{{ url_for('contest.contest_user_checked', contest_id=contest_id, user_id=user.user_id, flag=0) }}">click to cancel</a></td>
                            </tr>
                            {% endfor %}
                          </tbody>

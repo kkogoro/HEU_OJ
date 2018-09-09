@@ -25,29 +25,29 @@
                 </div>
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">比赛首页</a>
-                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">提交列表</a>
-                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">排行榜</a>
+                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">Overview</a>
+                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">Submission List</a>
+                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">Ranklist</a>
                         {% if contest.manager_username == current_user.username or current_user.is_admin()  %}
                         <a href="{{ url_for('contest.contest_user_check', contest_id=contest_id) }}" class="list-group-item">Confirm</a>
-                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">排行榜(管理员)</a>
+                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">Ranklist(Admin)</a>
                        {% if not contest.type %}
-                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">发送气球</a>
+                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">Send Balloon</a>
                         {% endif %}
                         {% endif %}
                     </div>
             	</div>
                 <div class="col-lg-10">
-                    <h3>比赛信息</h3>
+                    <h3>Contest Info</h3>
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>开始时间</th>
-                                <th>结束时间</th>
-                                <th>比赛类型</th>
-                                <th>管理员</th>
-                                <th>注册状态</th>
+                                <th>Start</th>
+                                <th>End</th>
+                                <th>Type</th>
+                                <th>Admin</th>
+                                <th>Regist Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,35 +55,35 @@
                                 <td>{{ moment(contest.start_time).format('LLLL') }}</td>
                                 <td>{{ moment(contest.end_time).format('LLLL') }}</td>
                                 {% if contest.style == 2 %}
-                                <td>私有比赛(管理员确认)</td>
+                                <td>Private(Admin confirm)</td>
                                 {% elif contest.style == 3 %}
-                                <td>私有比赛(密码保护)</td>
+                                <td>Private(Password Protected)</td>
                                 {% elif contest.style == 1 %}
-                                <td>开放注册</td>
+                                <td>Open</td>
                                 {% elif contest.style == 4 %}
-                                <td>现场赛预注册</td>
+                                <td>Onsite Preregist</td>
                                 {% elif contest.style == 5 %}
-                                <td>现场赛/正式比赛</td>
+                                <td>Onsite/Offcial</td>
                                 {% endif %}
                                 <td>{{ contest.manager_username }}</td>
                                 {% if is_in_contest != None %}
                                     {% if is_in_contest.user_confirmed is sameas true %}
-                                    <td>已注册并确认</td>
+                                    <td>Confirmed</td>
                                     {% else %}
-                                    <td>已注册未确认</td>
+                                    <td>Unconfirmed</td>
                                     {% endif %}
                                 {% else %}
-                                    <td>未注册</td>
+                                    <td>Unregisted</td>
                                 {% endif %}
                             </tr>
                         </tbody>
                     </table>
                     <hr>
-                    <h3>比赛描述</h3>
+                    <h3>Description</h3>
                     {{ contest.description|safe }}
                     <hr>
                     {% if contest.announce != None and contest.announce != '' %}
-                    <h3>比赛通知</h3>
+                    <h3>Announcement</h3>
                     {{ contest.announce|safe }}
                     <hr>
                     {% endif %}

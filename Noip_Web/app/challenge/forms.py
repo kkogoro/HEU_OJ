@@ -15,13 +15,13 @@ class SubmitForm(Form):
     '''
         define form of submit code
     '''
-    language = SelectField(u'语言', coerce=int)
-    code = TextAreaField(u'代码', validators=[DataRequired()])
-    submit = SubmitField(u'提交')
+    language = SelectField(u'Language', coerce=int)
+    code = TextAreaField(u'Code', validators=[DataRequired()])
+    submit = SubmitField(u'Submit')
 
     def validate_code(self, field):
         if len(field.data) < 10 or len(field.data) > 65535:
-            raise ValidationError(u'代码长度必须在10到65535个字符之间')
+            raise ValidationError(u'Code length should in [10,65535]')
 
     def __init__(self, *args, **kwargs):
         super(SubmitForm, self).__init__(*args, **kwargs)

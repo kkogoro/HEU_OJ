@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
-{% block title %}挑战-{{ challenge.challenge_name }}{% endblock %}s
+{% block title %}Challenge-{{ challenge.challenge_name }}{% endblock %}s
 {% block page_content %}
     <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">关卡 - {{ round.round_name }}
-                    <small>挑战 - {{ challenge.challenge_name }} </small>
+                <h1 class="page-header">Round - {{ round.round_name }}
+                    <small>Chllenge - {{ challenge.challenge_name }} </small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="{{ url_for('index.index_page') }}">Home</a>
@@ -21,11 +21,11 @@
             <div class="col-lg-12">
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('challenge.round_detail', round_id=round.id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('challenge.round_status_list', round_id=round.id) }}" class="list-group-item">提交列表</a>
+                        <a href="{{ url_for('challenge.round_detail', round_id=round.id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('challenge.round_status_list', round_id=round.id) }}" class="list-group-item">Submission List</a>
                     </div>
             	</div>
-                <h2>提交代码</h2>
+                <h2>Submit Code</h2>
                 <div class="col-lg-10">
                     <form method="post" class="form-horizontal">
                         {{ form.hidden_tag() }}
@@ -33,7 +33,7 @@
                         <div class="form-group has-feedback{% if form.language.errors %} has-error{% endif %}">
                             {{ form.language.label(for="inputLanguage", class="col-sm-2 control-label") }}
                             <div class="col-sm-8">
-                                {{ form.language(type="text", class="form-control", placeholder="语言") }}
+                                {{ form.language(type="text", class="form-control", placeholder="Language") }}
                                 {% if form.language.errors %}
                                 <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                                 <span id="inputError" class="sr-only">(error)</span>

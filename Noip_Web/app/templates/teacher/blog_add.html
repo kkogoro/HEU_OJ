@@ -8,7 +8,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">添加Blog
+                <h1 class="page-header">ADD
                     <small>Add Blog</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -26,7 +26,7 @@
     		<div class="form-group has-feedback{% if form.title.errors %} has-error{% endif %}">
                 {{ form.title.label(for="inputTitle", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.title(type="text", class="form-control", placeholder="Blog标题") }}
+                    {{ form.title(type="text", class="form-control", placeholder="Blog Title") }}
         		    {% if form.title.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -42,7 +42,7 @@
             <div class="form-group{% if form.content.errors %} has-error{% endif %}">
                 {{ form.content.label(for="inputContent", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.content(class="ckeditor", placeholder="内容", rows="8") }}
+                    {{ form.content(class="ckeditor", placeholder="Content", rows="8") }}
         		    {% if form.content.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>

@@ -4,7 +4,7 @@
           <!-- top tiles -->
           <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">编辑标签
+                <h1 class="page-header">EDIT
                     <small>Edit Tag</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -23,7 +23,7 @@
             <div class="form-group has-feedback{% if form.tag_name.errors %} has-error{% endif %}">
                 {{ form.tag_name.label(for="inputTagname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.tag_name(type="text", class="form-control", placeholder="标签名称") }}
+                    {{ form.tag_name(type="text", class="form-control", placeholder="Tag Name") }}
         		    {% if form.tag_name.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>

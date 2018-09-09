@@ -42,8 +42,8 @@
                               <td>{{ challenge.challenge_name }}</td>
                               <td>{{ challenge.challenge_level }}</td>
                               <td>
-                                  <a href="{{ url_for('admin.challenge_round_list', challenge_id=challenge.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 查看关卡</button></a>
-                                  <a href="{{ url_for('admin.edit_challenge', challenge_id=challenge.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button></a>
+                                  <a href="{{ url_for('admin.challenge_round_list', challenge_id=challenge.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> View Rounds</button></a>
+                                  <a href="{{ url_for('admin.edit_challenge', challenge_id=challenge.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Edit</button></a>
                               </td>
                           </tr>
                           {% endfor %}

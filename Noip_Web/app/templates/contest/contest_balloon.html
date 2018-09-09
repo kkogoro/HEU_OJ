@@ -25,15 +25,15 @@
                 </div>
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">比赛首页</a>
-                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">提交列表</a>
-                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">排行榜</a>
+                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">Overview</a>
+                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">Submission List</a>
+                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">Ranklist</a>
                         {% if contest.manager_username == current_user.username or current_user.is_admin()  %}
                         <a href="{{ url_for('contest.contest_user_check', contest_id=contest_id) }}" class="list-group-item">Confirm</a>
-                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">排行榜(管理员)</a>
+                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">Ranklist(Admin)</a>
                         {% if not contest.type %}
-                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">发送气球</a>
+                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">Send Balloon</a>
                         {% endif %}
                         {% endif %}
                     </div>
@@ -42,11 +42,11 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                              <th>运行ID</th>
-                              <th>提交时间</th>
-                              <th>评测状态</th>
-                              <th>题目ID</th>
-                              <th>提交用户</th>
+                              <th>Run ID</th>
+                              <th>Submit Time</th>
+                              <th>Judge Status</th>
+                              <th>Problem ID</th>
+                              <th>User</th>
                               <th>send</th>
                             </tr>
                           </thead>

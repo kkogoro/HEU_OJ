@@ -25,13 +25,13 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>时间限制</th>
-                                <th>内存限制</th>
-                                <th>总提交数</th>
-                                <th>AC数</th>
+                                <th>Time Limit</th>
+                                <th>Memory Limit</th>
+                                <th>Submissions0</th>
+                                <th>Accepted</th>
                                 <th>Special Judge</th>
-                                <th>学校名称</th>
-                                <th>最近更新时间</th>
+                                <th>School</th>
+                                <th>Update Time</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,9 +41,9 @@
                                 <td>{{ problem.submission_num }}</td>
                                 <td>{{ problem.accept_num }}</td>
                                 {% if problem.special_judge is sameas true %}
-                                <td>是</td>
+                                <td>True</td>
                                 {% else %}
-                                <td>否</td>
+                                <td>False</td>
                                 {% endif %}
                                 <td>{{ problem.school.school_name }}</td>
                                 <td>{{ moment(problem.last_update).fromNow(refresh=True) }}</td>

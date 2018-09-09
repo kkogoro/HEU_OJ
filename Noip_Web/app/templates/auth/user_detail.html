@@ -21,66 +21,66 @@
                 <img src="{{ '/static/photo/'+user.photo+'.png' }}" alt="" class="img-circle img-responsive img-thumbnail">
             </div>
             <div class="col-md-8">
-                <h2>{{ user.nickname }} 的个人信息</h2>
+                <h2>{{ user.nickname }} Profile</h2>
                 <table class="table table-hover">
                     <tr>
-                        <th>关于我:</th>
+                        <th>Description:</th>
                         <td>{{ user.about_me }}</td>
                     </tr>
                     {% if (not user.info_protection) or current_user.username == user.username or current_user.is_admin()  %}
                     <tr>
-                        <th >性别:</th>
+                        <th >Gender:</th>
                         <td >{{ user.gender }}</td>
                     </tr>
                     <tr>
-                        <th >真实姓名:</th>
+                        <th >Realname:</th>
                         <td >{{ user.realname }}</td>
                     </tr>
                     <tr>
-                        <th>专业:</th>
+                        <th>Major:</th>
                         <td>{{ user.major }}</td>
                     </tr>
                     <tr>
-                        <th>学历:</th>
+                        <th>Degree:</th>
                         <td>{{ user.degree }}</td>
                     </tr>
                     <tr>
-                        <th>国家:</th>
+                        <th>Country:</th>
                         <td>{{ user.country }}</td>
                     </tr>
                     <tr>
-                        <th>学校:</th>
+                        <th>Scholl:</th>
                         <td>{{ user.school.school_name }}</td>
                     </tr>
                     <tr>
-                        <th>学号:</th>
+                        <th>Number:</th>
                         <td>{{ user.student_num }}</td>
                     </tr>
                     <tr>
-                        <th>注册时间:</th>
+                        <th>Regist Time:</th>
                         <td>{{ moment(user.member_since).format('LLL') }}</td>
                     </tr>
                     <tr>
-                        <th>总提交数:</th>
+                        <th>Submissions:</th>
                         <td>{{ total_submission }}</td>
                     </tr>
                     {% else %}
                     <tr>
                         <th class="danger"></th>
-                        <td class="danger">用户设置了隐私保护，您无法查看被保护的信息！</td>
+                        <td class="danger">Profile is unvisible due to private setting.</td>
                     </tr>
                     {% endif %}
                     {% if current_user.username == user.username or current_user.is_admin()  %}
                     <tr>
-                        <th>邮箱:</th>
+                        <th>Email:</th>
                         <td>{{ user.email }}</td>
                     </tr>
                     <tr>
-                        <th>通讯地址:</th>
+                        <th>Address:</th>
                         <td>{{ user.address }}</td>
                     </tr>
                     <tr>
-                        <th>手机号:</th>
+                        <th>Phone:</th>
                         <td>{{ user.phone_num }}</td>
                     </tr>
                     {% endif %}
@@ -90,9 +90,9 @@
         <div>
         {% if user.username!=current_user.username  %}
         {% if not current_user.is_following(user) %}
-        <a class="btn btn-default btn-block" href="{{ url_for('auth.follow', username=user.username) }}" role="button">关注</a>
+        <a class="btn btn-default btn-block" href="{{ url_for('auth.follow', username=user.username) }}" role="button">Follow</a>
         {% else %}
-        <a class="btn btn-default btn-block" href="{{ url_for('auth.unfollow', username=user.username) }}" role="button">不再关注</a>
+        <a class="btn btn-default btn-block" href="{{ url_for('auth.unfollow', username=user.username) }}" role="button">Unfollow</a>
         {% endif %}
         {% endif %}
         </div>

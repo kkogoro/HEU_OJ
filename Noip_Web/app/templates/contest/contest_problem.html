@@ -25,15 +25,15 @@
                 </div>
             	<div class="col-lg-2">
                     <div class="list-group">
-                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">比赛首页</a>
-                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">题目列表</a>
-                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">提交列表</a>
-                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">排行榜</a>
+                        <a href="{{ url_for('contest.contest_detail', contest_id=contest.id) }}" class="list-group-item">Overview</a>
+                         <a href="{{ url_for('contest.contest_problem_list', contest_id=contest_id) }}" class="list-group-item">Problem List</a>
+                        <a href="{{ url_for('contest.contest_status_list', contest_id=contest_id) }}" class="list-group-item">Submission List</a>
+                        <a href="{{ url_for('contest.contest_ranklist', contest_id=contest_id) }}" class="list-group-item">Ranklist</a>
                         {% if contest.manager_username == current_user.username or current_user.is_admin()  %}
                         <a href="{{ url_for('contest.contest_user_check', contest_id=contest_id) }}" class="list-group-item">Confirm</a>
-                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">排行榜(管理员)</a>
+                        <a href="{{ url_for('contest.contest_ranklist_admin', contest_id=contest_id) }}" class="list-group-item">Ranklist(Admin)</a>
                         {% if not contest.type %}
-                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">发送气球</a>
+                        <a href="{{ url_for('contest.contest_show_balloon', contest_id=contest_id) }}" class="list-group-item">Send Balloon</a>
                         {% endif %}
                         {% endif %}
                     </div>
@@ -43,10 +43,10 @@
                     <table class="table table-bordered" cellspacing="0" width="100%" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <th>时间限制</th>
-                                <th>内存限制</th>
+                                <th>Time Limit</th>
+                                <th>Memory Limit</th>
                                 <th>Special Judge</th>
-                                <th>题目类型</th>
+                                <th>Type</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,9 +54,9 @@
                                 <th>{{ problem.time_limit }}s</th>
                                 <th>{{ problem.memory_limit }}m</th>
                                 {% if problem.special_judge is sameas true %}
-                                <th>是</th>
+                                <th>True</th>
                                 {% else %}
-                                <th>否</th>
+                                <th>False</th>
                                 {% endif %}
                                 {% if problem.type is sameas true %}
                                 <td>NOIP</td>
@@ -66,7 +66,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a class="btn btn-default btn-block btn btn-primary" href="{{ url_for('contest.contest_submit',contest_id=contest.id, problem_index=problem_index) }}" role="button">提交</a>
+                    <a class="btn btn-default btn-block btn btn-primary" href="{{ url_for('contest.contest_submit',contest_id=contest.id, problem_index=problem_index) }}" role="button">Submit</a>
                     <h2>Description</h2>
                         <p style="white-space: pre-wrap;">{{ problem.description|safe }}</p>
                     <hr/>

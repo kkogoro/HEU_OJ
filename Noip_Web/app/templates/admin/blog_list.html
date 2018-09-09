@@ -45,7 +45,7 @@
                               <td><a href="{{ url_for('admin.user_detail', username=blog.author_username) }}">{{ blog.author_username }}</a></td>
                               <td>{{ moment(blog.last_update).format('LLL') }}</td>
                               <td>{{ blog.public }}</td>
-                              <td><a href="{{ url_for('admin.blog_edit', blog_id=blog.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> 编辑</button></a></td>
+                              <td><a href="{{ url_for('admin.blog_edit', blog_id=blog.id) }}"><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> Edit</button></a></td>
                           </tr>
                           {% endfor %}
                          </tbody>

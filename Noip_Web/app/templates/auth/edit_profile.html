@@ -4,7 +4,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">修改个人信息
+                <h1 class="page-header">EDIT
                     <small>Edit Profile</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -21,7 +21,7 @@
     		<div class="form-group has-feedback{% if form.nickname.errors %} has-error{% endif %}">
                 {{ form.nickname.label(for="inputNickname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.nickname(type="text", class="form-control", placeholder="昵称") }}
+                    {{ form.nickname(type="text", class="form-control", placeholder="Nickname") }}
         		    {% if form.nickname.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -37,7 +37,7 @@
             <div class="form-group has-feedback{% if form.realname.errors %} has-error{% endif %}">
                 {{ form.realname.label(for="inputRealname", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.realname(type="text", class="form-control", placeholder="真实姓名") }}
+                    {{ form.realname(type="text", class="form-control", placeholder="Realname") }}
         		    {% if form.realname.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -69,7 +69,7 @@
             <div class="form-group has-feedback{% if form.major.errors %} has-error{% endif %}">
                 {{ form.major.label(for="inputMajor", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.major(type="text", class="form-control", placeholder="专业") }}
+                    {{ form.major(type="text", class="form-control", placeholder="Major") }}
         		    {% if form.major.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -101,7 +101,7 @@
             <div class="form-group has-feedback{% if form.country.errors %} has-error{% endif %}">
                 {{ form.country.label(for="inputCountry", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.country(type="text", class="form-control", placeholder="国家") }}
+                    {{ form.country(type="text", class="form-control", placeholder="Country") }}
         		    {% if form.country.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -117,7 +117,7 @@
             <div class="form-group has-feedback{% if form.address.errors %} has-error{% endif %}">
                 {{ form.address.label(for="inputAddress", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.address(type="text", class="form-control", placeholder="地址") }}
+                    {{ form.address(type="text", class="form-control", placeholder="Address") }}
         		    {% if form.address.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -151,7 +151,7 @@
             <div class="form-group has-feedback{% if form.student_num.errors %} has-error{% endif %}">
                 {{ form.student_num.label(for="inputStudent", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.student_num(type="text", class="form-control", placeholder="学号") }}
+                    {{ form.student_num(type="text", class="form-control", placeholder="Number") }}
         		    {% if form.student_num.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -167,7 +167,7 @@
             <div class="form-group has-feedback{% if form.phone_num.errors %} has-error{% endif %}">
                 {{ form.phone_num.label(for="inputSchool", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.phone_num(type="text", class="form-control", placeholder="手机号") }}
+                    {{ form.phone_num(type="text", class="form-control", placeholder="Phone") }}
         		    {% if form.phone_num.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
@@ -183,7 +183,7 @@
             <div class="form-group has-feedback{% if form.about_me.errors %} has-error{% endif %}">
                 {{ form.about_me.label(for="inputSchool", class="col-sm-2 control-label") }}
         		<div class="col-sm-8">
-                    {{ form.about_me(type="text", class="form-control", placeholder="关于我") }}
+                    {{ form.about_me(type="text", class="form-control", placeholder="Description") }}
         		    {% if form.about_me.errors %}
                     <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                     <span id="inputError" class="sr-only">(error)</span>
